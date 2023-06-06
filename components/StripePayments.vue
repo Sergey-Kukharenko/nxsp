@@ -35,7 +35,7 @@ export default {
 
     async initApplePayButton() {
       try {
-        await this.generatePaymentIntent();
+        // await this.generatePaymentIntent();
 
         this.stripe = this.$stripe
 
