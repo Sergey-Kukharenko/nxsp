@@ -9,9 +9,9 @@ export const mutations = {
 };
 
 export const actions = {
-  async fetchStripeClientSecret({ commit }, orderId) {
+  async fetchStripeClientSecret({ commit }) {
     try {
-      const { data } = await this.$axios.$get(`/payment/stripe/${orderId}/`);
+      const { data } = await this.$axios.$post(`/payment/stripe/intent/`);
       commit('setState', { paymentIntent: data });
 
       return data;

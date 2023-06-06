@@ -23,11 +23,9 @@ export default {
           return this.clientSecret;
         }
 
-        const { client_secret: clientSecret } = await this.$store.dispatch(
-          "payment/fetchStripeClientSecret",
-          "vG2ON8Xj6xXp45q7"
-        );
-        this.clientSecret = clientSecret || "";
+        const { client_secret: clientSecret } = await this.$store.dispatch('payment/fetchStripeClientSecret');
+        console.log(clientSecret);
+        this.clientSecret = clientSecret || '';
 
         return clientSecret;
       } catch (err) {
@@ -37,12 +35,7 @@ export default {
 
     async initApplePayButton() {
       try {
-        // await this.generatePaymentIntent();
-
-        // eslint-disable-next-line no-undef
-        // this.stripe = await Stripe(
-        //   "pk_test_51MAH44FIu4AHcfNO4v4WsCBEV8LZBYlecVBPHPn5EaVLhM1dtdXNc0c5sqSRkpizA5e7m8dwNlSNJaCiG9r0pbbW00BwAVZ3IV"
-        // );
+        await this.generatePaymentIntent();
 
         this.stripe = this.$stripe
 
