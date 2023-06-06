@@ -97,11 +97,15 @@ export default {
               );
               if (error) {
                 // The payment failed -- ask your customer for a new payment method.
+                console.log(error)
+                console.log('The payment failed')
               } else {
                 // The payment has succeeded.
+                console.log('The payment has succeeded in case error')
               }
             } else {
               // The payment has succeeded.
+              console.log('The payment has succeeded')
             }
           }
         });
